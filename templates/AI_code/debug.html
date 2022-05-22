@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debugger</title>
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static' , filename='AI.css')}}">
+
+
+</head>
+
+
+<body style="background-color: rgb(219, 219, 219);">
+
+  <img src="static\curly_braces.svg" height="600px" width="600px" style="position:absolute; right:80px ;opacity: 0.03;">
+
+<!-- menu -->
+
+
+<input type="checkbox" id="active">
+<label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
+<div class="wrapper" style="background-color:white;">
+  <ul>
+    <li><img src="static\curly_braces.svg"></li>
+<li><a href="{{url_for('home')}}">Home</a></li>
+<li><a href="{{url_for('home')}}#courses">Courses</a></li>
+<li><a href="{{url_for('IDE')}}">Online IDE</a></li>
+
+</ul>
+</div>
+
+
+
+
+
+
+<div style="display:flex;">
+    <form name="genra" action="/debug" method="post" style="border-radius: 20px;">
+        <div style="display:flex;flex-direction: column;">
+            <label for="code_in" style="font-size: 20px;"><span style="background-color:rgba(255, 255, 255, 0.7);border-radius: 5px;padding: 6px;">Input</span></label>
+            <textarea name="code_in" spellcheck="false" style="border-radius:17px; padding:18px; background-color:#1C2333; color:white; font-size: 18px; height:55vh; width: 42vw;resize: none;box-shadow: inset 0 0 20px #000000;"></textarea>
+            <label for="inst_in"  style="font-size: 20px;">Instructions</label>
+            <textarea name="inst_in" spellcheck="false" required style="border-radius:17px; padding:18px; background-color:#1C2333; color:white; font-size: 18px; height:13vh;width: 42vw;resize: none;box-shadow: inset 0 0 20px #000000;">"Fix bugs in this python code", "Solve the issues and/or errors in the above python code", "Propose a solution for the bugs in this python code"</textarea>
+            <input type="submit" value="Generate code" name="submit1" />
+        </div>
+    </form>
+
+
+
+
+
+{% if result %}
+<div  style="display:flex;flex-direction: column;">
+<form class="form-inline" id="form2">
+  <div class="form-group">
+    
+    <pre>
+     <textarea type="text" class="form-control" id="nameInput" spellcheck="false"  style="border-radius:20px; padding:18px; background-color:rgba(255, 255, 255, 0.5); color:rgb(57, 57, 57); font-size: 18px; height:55vh; width: 48vw;resize: none;margin-left: 0;margin-top: 16px;">{{ result }}</textarea>
+    </pre>
+  </div>
+  <button type="submit" class="btn btn-default" style="margin-left:50px;margin-top: 0;">Run</button>
+</form>
+<pre id="result" style="border-radius:20px; padding:18px; background-color:rgba(255, 255, 255, 0.3); color:rgb(69, 69, 69); font-size: 17px;width:48vw;margin-left: 6px;height: 30%; overflow: auto; resize: none;border: none; font-weight: 400;margin-left: 35px;margin-top: 10px;">output:</pre>
+</div>
+{% endif %}
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="{{url_for('static' , filename='form_coding.js')}}"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Flask tutorial</title>
+
+         <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="static\FLask_courcss.css">
+    </head>
+    <body>
+
+
+
+
+        <div class="nav">
+            <input type="checkbox">
+              <span></span>
+              <span></span>
+              <div class="menu">
+                <li><a href="{{url_for('home')}}">home</a></li>
+                <li><a href="{{url_for('create_code')}}">genrator</a></li>
+                <li><a href="{{url_for('debug')}}">debugger</a></li>
+                <li><a href="{{url_for('explain')}}">explainer</a></li>
+                
+              </div>
+          </div>
+
+
+
+
+
+        <div class="wrapper">
+            <!-- Sidebar Holder -->
+           
+            <nav id="sidebar" style="position:sticky">
+                <div class="sidebar-header">
+                    <h3 style="color:black ; border-radius: 10px;">Flask :Develope Web app in Python</h3>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <!-- <p style="color:black ; background-color: rgb(204, 248, 233); border-radius: 10px;  margin-top: 0;">path</p> -->
+                    <li class="active">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" style="color:black ;">Introduction to Flask</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li><a href="{{url_for('first')}}" target="right_page"  style="color:black ;">What is Flask?</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" style="color:black ;">First Flask Application</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li><a href="#" style="color:black ;">Hello World!</a></li>
+                            <li><a href="#" style="color:black ;">URL Routes and Views</a></li>
+                            <li><a href="#" style="color:black ;">Dynamic Routing</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        
+                        <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" style="color:black ;">Static Templates</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu2">
+                            <li><a href="#" style="color:black ;">How Do We Use HTML Templates?</a></li>
+                            <li><a href="#" style="color:black ;">Project Challenge: HTML Using Strings</a></li>
+                            <li><a href="#" style="color:black ;">Solution: HTML Using Strings</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        
+                        <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false" style="color:black ;">Static Files</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu3">
+                            <li><a href="#" style="color:black ;">How Do We Serve Static Files?</a></li>
+                            <li><a href="#" style="color:black ;">Project Challenge: Using Static Files</a></li>
+                            <li><a href="#" style="color:black ;">Solution: Using Static Files</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        
+                        <a href="#pageSubmenu4" data-toggle="collapse" aria-expanded="false" style="color:black ;">Dynamic Templates </a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu4">
+                            <li><a href="#" style="color:black ;">Jinja2 Templates</a></li>
+                            <li><a href="#" style="color:black ;">Variables</a></li>
+                            <li><a href="#" style="color:black ;">Control Flow</a></li>
+                            <li><a href="#" style="color:black ;">Template Inheritance</a></li>
+                            <li><a href="#" style="color:black ;">Control Flow</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        
+                        <a href="#pageSubmenu5" data-toggle="collapse" aria-expanded="false" style="color:black ;">Form Handling</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu5">
+                            <li><a href="#" style="color:black ;">Introduction to Forms and Requests</a></li>
+                            <li><a href="#" style="color:black ;">Data Handling Using the Request Object</a></li>
+                            <li><a href="#" style="color:black ;">Creating Forms using Flask-WTF and WTForms</a></li>
+                            <li><a href="#" style="color:black ;">Creating Forms using Flask-WTF and WTForms</a></li>
+                            <li><a href="#" style="color:black ;">Rendering Flask-WTF forms in templates</a></li>
+                            <li><a href="#" style="color:black ;">Form Validation and Data and Error Handling with Flask-WTF</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        
+                        <a href="#pageSubmenu6" data-toggle="collapse" aria-expanded="false" style="color:black ;">First Flask Application</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu6">
+                            <li><a href="#" style="color:black ;">Page 1</a></li>
+                            <li><a href="#" style="color:black ;">Page 2</a></li>
+                            <li><a href="#" style="color:black ;">Page 3</a></li>
+                        </ul>
+                    </li>
+                    
+                   
+                
+                </ul>
+
+                <ul class="list-unstyled CTAs">
+                    <li><a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a></li>
+                    <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a></li>
+                </ul>
+            </nav>
+
+
+            <iframe src="{{url_for('first')}}" width="100%" height="1000px" name="right_page" style="border:none"></iframe>
+           
+
+            <!-- Page Content Holder
+            <div id="content">
+
+                <nav class="navbar navbar-default"   style="position:sticky; top: 0;">
+                    <div class="container-fluid">
+
+                        <div class="navbar-header">
+                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn" style="background-color:rgb(193, 251, 232)">
+                                <i class="glyphicon glyphicon-align-left"></i>
+                                <span style="color:black ;">Toggle Sidebar</span>
+                            </button>
+                        </div>
+
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#">Page</a></li>
+                                <li><a href="#">Page</a></li>
+                                <li><a href="#">Page</a></li>
+                                <li><a href="#">Page</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div  class="page_container" style="margin-left:100px;margin-right: 50px;">              
+                  <h2>What is Flask?</h2>
+                    <p>In this lesson, a brief introduction of the Flask framework and its history is mentioned.</p>
+                    <img src="data:image/png;base64,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" width="700px">
+                    <div class="line"></div>
+
+                    <h2>Introduction</h2>
+                    <p>Flask is a web development framework developed in Python. It is easy to learn and use. Flask is “beginner-friendly” because it does not have boilerplate code or dependencies, which can distract from the primary function of an application.</p>
+                    <div class="line"></div>
+
+                    <h2>Features of Flask</h2>
+                    <p>Some features which make Flask an ideal framework for web application development are:
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;1.)Flask provides a development server and a debugger.
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;2.)It uses Jinja2 templates.
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;3.)It is compliant with WSGI 1.0.
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;4.)It provides integrated support for unit testing.
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;5.)Many extensions are available for Flask, which can be used to enhance its functionalities.
+                        <br>In this course, we will be using a few of these extensions to create a working product.</p>
+                    <div class="line"></div>
+
+                    <h2>Why is Flask called a micro-framework?</h2>
+                   <p> Flask is known as a micro-framework because it is lightweight and only provides components that are essential. It only provides the necessary components for web development, such as routing, request handling, sessions, and so on. For the other functionalities such as data handling, the developer can write a custom module or use an extension. This approach avoids unnecessary boilerplate code, which is not even being used.
+                    </p>
+
+                    </div>
+
+            </div>
+        </div>
+
+    -->
+
+
+
+       
+         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+       
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+         <script type="text/javascript">
+             $(document).ready(function () {
+                 $('#sidebarCollapse').on('click', function () {
+                     $('#sidebar').toggleClass('active');
+                 });
+             });
+         </script> 
+    </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI code Generater</title>
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static' , filename='AI.css')}}">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Overpass+Mono&display=swap');
+      </style>
+
+
+
+
+</head>
+<body style="background-color: rgb(219, 219, 219);">
+
+<img src="static\home_line_deco.png" width="150px" height="100px" style="position:absolute;right: 30px;opacity: 0.9;">
+
+
+
+
+<!-- menu -->
+
+
+<input type="checkbox" id="active">
+<label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
+<div class="wrapper">
+  <ul>
+<li><a href="{{url_for('home')}}">Home</a></li>
+<li><a href="{{url_for('home')}}#courses">Courses</a></li>
+<li><a href="{{url_for('IDE')}}">Online IDE</a></li>
+
+</ul>
+</div>
+
+
+
+{% block content %}
+<!-- Placeholder for Page Content -->
+{% endblock %}
+
+
+
+<div style="display:flex;">
+<form name="genra" action="/create_code" method="post" style="border-radius: 20px;">
+    <div style="display:flex;flex-direction: column;">
+        <label for="code_in" style="font-size: 20px;"><span style="background-color:rgba(255, 255, 255, 0.7);border-radius: 5px;padding: 6px;font-family: 'Overpass Mono', monospace;">Input</span></label>
+        <textarea name="code_in" spellcheck="false" style="border-radius:20px; padding:18px; background-color:#1C2333; color:white; font-size: 18px; height:43vh; width: 42vw;resize: none;box-shadow: inset 0 0 20px #000000;"></textarea>
+        <label for="inst_in"  style="font-size: 20px;font-family: 'Overpass Mono', monospace;">Instructions</label>
+        <textarea name="inst_in" spellcheck="false" required style="border-radius:20px; padding:18px; background-color:#1C2333; color:white; font-size: 18px; height:28vh;width: 42vw;resize: none;box-shadow: inset 0 0 20px #000000;"></textarea>
+        <input type="submit" value="Generate code" name="submit1" />
+    </div>
+</form>
+
+
+
+<!-- this code is to make the direct online compiler as it is
+
+<iframe frameborder="0" width="100%" height="690px" src="https://replit.com/@shubh2004/Hackathon?lite=true" style="border-radius:10px;margin-left:15px">Hello World</iframe>
+
+ -->
+
+
+
+ 
+<!-- main important
+ 
+
+<div class="result" style="display:flex;flex-direction: column;">
+  {% if result %}
+  <form  name="run_code">
+    
+  <pre >
+    <textarea name="res_code" id="res_code" spellcheck="false"  style="border-radius:20px; padding:18px; background-color:rgba(255, 255, 255, 0.5); color:rgb(57, 57, 57); font-size: 18px; height:59vh; width: 48vw;resize: none;">{{ result }}</textarea>
+  </pre>
+  
+  <input type="submit" value="Run" style="width:100px; height:50px" name="submit2" />
+  </form>
+  {% endif %}
+
+  <p id="result2" style="border-radius:20px; padding:18px; background-color:rgba(255, 255, 255, 0.5); color:rgb(57, 57, 57); font-size: 18px; height:59vh; width: 48vw;resize: none;"></p>
+  
+  
+</div> -->
+
+
+{% if result %}
+<div  style="display:flex;flex-direction: column;">
+<form class="form-inline" id="form2">
+  <div class="form-group">
+    
+    <pre>
+     <textarea type="text" class="form-control" id="nameInput" spellcheck="false"  style="border-radius:20px; padding:18px; background-color:rgba(255, 255, 255, 0.5); color:rgb(57, 57, 57); font-size: 18px; height:55vh; width: 48vw;resize: none;margin-left: 0;margin-top: 16px;">{{ result }}</textarea>
+    </pre>
+  </div>
+  <button type="submit" class="btn btn-default" style="margin-left:50px;margin-top: 0;">Run</button>
+</form>
+<pre id="result" style="border-radius:20px; padding:18px; background-color:rgba(255, 255, 255, 0.3); color:rgb(69, 69, 69); font-size: 17px;width:48vw;margin-left: 6px;height: 30%; overflow: auto; resize: none;border: none; font-weight: 400;margin-left: 35px;margin-top: 10px;">output:</pre>
+</div>
+{% endif %}
+
+
+
+
+
+
+
+
+
+<!-- {% if result %}
+<div class="result" style="display:flex;flex-direction: column;">
+  <pre style="border-radius:20px; padding:10px; background-color:rgba(255, 255, 255, 0.4); color:rgb(73, 73, 73); font-size: 20px;width:51vw;height: 88%; overflow: auto;margin-left: 8px;  ">
+    <textarea spellcheck="false" style="border-radius:20px; padding:18px; background-color:rgba(255, 255, 255, 0.3); color:rgb(69, 69, 69); font-size: 17px;width:55vw;height: 60%; overflow: auto; resize: none;border: none; font-weight: 400;">{{ result }}</textarea>
+  </pre>
+  <pre style="border-radius:20px; padding:10px; background-color:rgba(255, 255, 255, 0.4); color:rgb(73, 73, 73); font-size: 20px;width:51vw;height: 88%; overflow: auto;margin-left: 8px;  ">
+    <textarea spellcheck="false" style="border-radius:20px; padding:18px; background-color:rgba(255, 255, 255, 0.3); color:rgb(69, 69, 69); font-size: 17px;width:45vw;margin-left: 6px;height: 60%; overflow: auto; resize: none;border: none; font-weight: 400;">{{ result }}</textarea>
+  </pre>
+  
+</div>
+{% endif %} -->
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="{{url_for('static' , filename='form_coding.js')}}"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+
+    
+</body>
+</html>

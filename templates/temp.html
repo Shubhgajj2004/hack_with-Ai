@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temp</title>
+    <link rel="stylesheet" href="{{url_for('static' , filename='temp.css')}}">
+    
+
+</head>
+<body>
+    
+
+
+
+
+
+
+    <div class="scrolls">
+        <div class="up"><span>↑</span>
+            <div class="center"><span>mouse <br> scrolling</span></div>
+        </div>
+        <div class="down"><span>↓</span></div>
+    </div>
+    <div class="smooth">
+        <div class="header">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="{{url_for('IDE')}}">Online IDE</a></li>
+               <li> <div class="dropdown">
+                   <div style="color:#fe606a;"><b>AI code</b></div> 
+                    <div class="dropdown-content" style="border-radius:18px; width: 200px;">
+                      <a href="{{url_for('create_code')}}"><img src="static\icons8-generated-photos-48.png" width="32px" height="32px">&nbsp;&nbsp;&nbsp;  Generate the code</a>
+                      <a href="{{url_for('debug')}}"><img src="static\icons8-debug-64.png" width="32px" height="32px">&nbsp;&nbsp;&nbsp; Debug the code</a>
+                      <a href="{{url_for('explain')}}"><img src="static\icons8-explain-64.png" width="32px" height="32px">&nbsp;&nbsp;&nbsp;Explain the code</a>
+                    </div>
+                  </div>    
+                </li>
+                
+            </ul>
+        </div>
+
+
+        <section id="home">
+          <img src="static\conifer-lines-3.png" width="300px" height="100px" style="position:absolute; bottom: 30px;">
+          <img src="static\home_ai.png" width="660px" height="430px" style="position:absolute; right: 0;top: 20vh;">
+          <img src="static\home_circle.png" width="20px" height="20px" style="position:absolute; top: 90px;left: 40px;">
+          <div id="homecont">
+             <!-- Welcome text -->
+             <span class="cont">
+                <div class="wrapper">
+                   <div class="typing-demo">
+                   Welcome to <span style="color:#FD424D ;background-color: #f4f8a8;">ProgAI</span> 👋
+                   </div>
+                </div>
+     
+              </span>
+
+              <div class="animbtn">
+                <a class="effect1" href="#courses">
+                 Let's Go!
+                <span class="bg"></span>
+                </a>
+              </div>
+
+          </div>
+      
+        
+        </section>
+        <section id="courses">
+            
+            <main class="contain">
+                <div class='card card-1'>
+                  <div class='info'>
+                    <h1 class='title'>Python</h1>
+                    <p class='description'>👉🏽Are you intersted in AI/ML? <br><br>👉🏽Learn Python with strong AI support with us .</p>
+                  
+                  </div>
+                </div>
+                <div class='card card-2'>
+                    <div class='info '>
+                      <h1 class='title'>Flask</h1>
+                      <p class='description'>👉🏽Want to make your first Web APP?<br><br>👉🏽 Learn Flask with us with strong AI support.
+                        <a href="{{url_for('learn_flask')}}"> <button class="bubbly-button btn-card">Learn</button></a>
+                      </p>
+                    </div>
+                  </div>
+              </main>
+              
+        </section>
+        
+    </div>
+
+
+
+
+
+
+
+    <script src="static\btn_anim.js"></script>
+
+</body>
+</html>
