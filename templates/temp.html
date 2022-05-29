@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temp</title>
+    <title>CodeHub</title>
     <link rel="stylesheet" href="{{url_for('static' , filename='temp.css')}}">
-    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@700&display=swap');
+      </style>
 
 </head>
 <body>
     
-
-
-
-
+<img src="data:image/png;base64,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" width="40px" height="44px" style="margin-left:40px;padding-bottom: 4px;" >
 
 
     <div class="scrolls">
@@ -26,11 +25,12 @@
     <div class="smooth">
         <div class="header">
             <ul>
+              
                 <li><a href="#home">Home</a></li>
                 <li><a href="#courses">Courses</a></li>
                 <li><a href="{{url_for('IDE')}}">Online IDE</a></li>
                <li> <div class="dropdown">
-                   <div style="color:#fe606a;"><b>AI code</b></div> 
+                   <div style="color:#8b8b8b;">AI CODE</div> 
                     <div class="dropdown-content" style="border-radius:18px; width: 200px;">
                       <a href="{{url_for('create_code')}}"><img src="static\icons8-generated-photos-48.png" width="32px" height="32px">&nbsp;&nbsp;&nbsp;  Generate the code</a>
                       <a href="{{url_for('debug')}}"><img src="static\icons8-debug-64.png" width="32px" height="32px">&nbsp;&nbsp;&nbsp; Debug the code</a>
@@ -44,15 +44,17 @@
 
 
         <section id="home">
+          <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player src="https://assets2.lottiefiles.com/packages/lf20_nncar5qq.json"  background="transparent"  speed="1"  style="width: 500px; height: 500px;position:absolute; right: 30px;top: 20vh;"  loop  autoplay></lottie-player>
           <img src="static\conifer-lines-3.png" width="300px" height="100px" style="position:absolute; bottom: 30px;">
-          <img src="static\home_ai.png" width="660px" height="430px" style="position:absolute; right: 0;top: 20vh;">
+          <!-- <img src="static\home_ai.png" width="660px" height="430px" style="position:absolute; right: 0;top: 20vh;"> -->
           <img src="static\home_circle.png" width="20px" height="20px" style="position:absolute; top: 90px;left: 40px;">
           <div id="homecont">
              <!-- Welcome text -->
              <span class="cont">
                 <div class="wrapper">
-                   <div class="typing-demo">
-                   Welcome to <span style="color:#FD424D ;background-color: #f4f8a8;">ProgAI</span> 👋
+                   <div class="typing-demo" style="font-family: 'Signika Negative', sans-serif;font-size: 82px;">
+                   Welcome to <span style="color:#00DDB3 ;font-family: 'Signika Negative', sans-serif;font-size: 82px;">CodeHub</span> 👋
                    </div>
                 </div>
      

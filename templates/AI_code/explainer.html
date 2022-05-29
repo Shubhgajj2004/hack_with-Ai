@@ -25,8 +25,9 @@
 
 <input type="checkbox" id="active">
 <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
-<div class="wrapper">
+<div class="wrapper" style="background-color:white;">
   <ul>
+    <li><img src="static\curly_braces.svg"></li>
 <li><a href="{{url_for('home')}}">Home</a></li>
 <li><a href="{{url_for('home')}}#courses">Courses</a></li>
 <li><a href="{{url_for('IDE')}}">Online IDE</a></li>
@@ -45,8 +46,8 @@
             <label for="code_in" style="font-size: 20px;"><span style="background-color:rgba(255, 255, 255, 0.7);border-radius: 5px;padding: 6px;">Input</span></label>
             <textarea name="code_in" spellcheck="false" style="border-radius:20px; padding:18px; background-color:#1C2333; color:white; font-size: 18px; height:60vh; width: 42vw;resize: none;box-shadow: inset 0 0 20px #000000;"></textarea>
             <label for="inst_in"  style="font-size: 20px;">Instructions</label>
-            <textarea name="inst_in" spellcheck="false" required style="border-radius:20px; padding:18px; background-color:#1C2333; color:white; font-size: 18px; height:10vh;width: 42vw;resize: none;box-shadow: inset 0 0 20px #000000;">what this python code is doing and Explanation of the above in human readable format </textarea>
-            <input type="submit" value="Generate code" name="submit1" />
+            <textarea name="inst_in" spellcheck="false" required style="border-radius:20px; padding:18px; background-color:#1C2333; color:white; font-size: 18px; height:10vh;width: 42vw;resize: none;box-shadow: inset 0 0 20px #000000;">what this python code is doing and give explanation in depth </textarea>
+            <input type="submit" value="Explain Code" name="submit1" />
         </div>
     </form>
 

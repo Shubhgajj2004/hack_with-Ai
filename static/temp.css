@@ -1,7 +1,9 @@
 *, ::before, ::after {
     box-sizing: border-box;
   }
+  
   body {
+    
     position: relative;
     margin: 0;
     overflow: hidden;
@@ -45,11 +47,12 @@
   .header {
     position: fixed;
     top: 0;
+    right: 0;
     z-index: 1;
     display: flex;
-    width: 100%;
-    min-height: 60px;
-    font-size: 1rem;
+    width: 55%;
+    /* min-height: 60px; */
+    font-size: 0.9rem;
     
   }
   .header ul {
@@ -68,8 +71,8 @@
     position: relative;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: 600;
-    color: #fe606a;
+    font-weight: 300;
+    color: #8b8b8b;
   }
   .header ul li a::after {
     position: absolute;
@@ -82,7 +85,7 @@
   }
   .header ul li a:hover::after {
     width: 100%;
-    background-color: #ff8b8b;
+    background-color: #00DDB3;
   }
   #home {
     /* position: relative;*/
@@ -93,7 +96,7 @@
     /* align-items: center;
     justify-content: center; */
     font-size: 1rem;
-    background-color: #f2f2f2;
+    background-color: #ffffff;
     background-size: cover;
     scroll-snap-align: center;
   }
@@ -107,7 +110,7 @@
     align-items: center;
     justify-content: center;
     font-size: 1rem;
-    background-color: #000000;
+    background-color: #ffffff;
     background-size: cover;
     scroll-snap-align: center;
   }
@@ -138,11 +141,6 @@ background-color: #F7F8FD;  } */
 
 
 
-#homecont
-{
-  background-color: #e1e1e1;
-  
-}
 
 
 
@@ -157,7 +155,7 @@ background-color: #F7F8FD;  } */
   
 display:absolute;
 top: 30vh;
-left: 60px;
+left: 70px;
 
 
 }
@@ -366,7 +364,7 @@ a {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #ffffff;
+  background-color:rgb(247, 249, 247);
   min-width: 230px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -424,7 +422,7 @@ animated button */
   top: 150px; */
   position: absolute;
   top: 60vh;
-  left: 120px;
+  left: 140px;
   width: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -436,7 +434,7 @@ animated button */
       -ms-flex-pack: center;
           justify-content: center;
   height: 50%;
-  background: #eee;
+  background: #00DDB3;
 }
 
 .effect1 {
